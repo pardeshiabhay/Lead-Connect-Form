@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeadConnector</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
-    <script src="script.js"></script>
     <h1>Create Lead</h1>
 
     <form 
     action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdL000008UsIf" 
     method="POST" 
     onsubmit="beforesubmit()">
-    
+    <input 
+    type=hidden 
+    name='captcha_settings' 
+     value='{"keyname":"LeadConnector","fallback":"true","orgId":"00DdL000008UsIf","ts":""}'/>
+
     <input 
     type=hidden 
     name="oid" 
@@ -64,6 +69,8 @@
    <!-- Lead Date:<span class="dateInput dateOnlyInput"><input  id="00NdL00000Ue3lt" name="00NdL00000Ue3lt" size="12" type="text" /></span><br> -->
     
     <input type="submit" name="submit" class="submit">
+    <div class="g-recaptcha" data-sitekey="6LckBBorAAAAAJ3Yg775CsUSdgI-MNq25XzieQlR"></div><br>
+
     
     </form>
     
